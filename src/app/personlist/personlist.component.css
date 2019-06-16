@@ -1,0 +1,20 @@
+h1{
+	color: #343434;
+	font-weight: normal;
+	font-family: 'Ultra', sans-serif;   
+	font-size: 26px;
+	line-height: 42px;
+	text-transform: uppercase;
+    text-shadow: 0 2px white, 0 3px #777;
+    text-align: center;
+}
+p{
+    font-size: 9;
+    font-style: italic;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', 'sans-serif';
+}
+h3{
+    text-decoration: underline;
+    text-align: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', 'sans-serif';
+}

@@ -1,0 +1,30 @@
+<div class="row"> 
+    <div class="col-sm-2"> 
+      
+      <button class="btn btn-primary" (click)="downloadPhoneBook()">Download Phone Book as PDF</button><span class="caret"></span>
+    
+    </div>
+    </div>
+
+<app-phoneform (newPersonAdded)="personAdded($event)"></app-phoneform>
+<app-search></app-search>
+<hr>
+
+<h1>
+Phone Book:
+</h1>
+<p>{{this.Message}}</p>
+<div class="row"> 
+    <div class="col-sm-2">
+        <h3>Name</h3>
+      </div>
+      <div class="col-sm-2">
+          <h3> Number</h3>
+      </div>
+      <hr>
+      <br>
+      <br>
+    </div>
+          <div class="row" *ngFor='let item of listOfPersons'>
+          <app-personcard [item]='item' (refreshList)="refreshList($event)"  (itemToDelete)="itemToDelete($event)"></app-personcard>
+          </div>

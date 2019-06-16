@@ -1,0 +1,29 @@
+<div class="container"> 
+  <div class="row">
+    <div class="col-md-12">
+            <div class="row">
+              <div class="col-sm-3 form-group">  
+                <label>Full Name:</label>
+                <input name="inputName" type="text" id="name" class="form-control" [(ngModel)]="newPerson.fullName" required>
+              </div>
+              <div class="col-sm-3 form-group"> 
+                <label>Phone Number:</label>
+                <input  name="inputNumber" #phoneNum="ngModel" type="text" id="number" class="form-control" [(ngModel)]="newPerson.phoneNumber" required minlength="9" maxlength="12">
+              </div>
+            </div>
+            <div class="row"> 
+                <div class="col-xs-12"> 
+                        <p>Phone Number must be at least 9 characters long and 12 maximum.</p>
+                        <p>{{this.message}}</p>
+                  </div>
+            </div>
+            <div class="row"> 
+              <div class="col-xs-12"> 
+                <button class="btn btn-success" (click)="addPerson()">Add</button> &nbsp;
+                <button class="btn btn-primary" (click)="clearForm()">Clear Form</button> &nbsp;
+              </div>
+            </div>
+</div>
+</div>
+</div>
+<hr>

@@ -1,0 +1,26 @@
+<div class="row"> 
+ <div class="col-md-12">
+    <label class="radio-inline">
+        <input type="radio" name="radioSearch" value="Name" [(ngModel)]="nameRadio">Name
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="radioSearch" value="Phone Number" [(ngModel)]="phoneRadio">Phone Number
+      </label>
+      <div class="col-sm-3 form-group">
+    <input name="inputNumber" #searchInput="ngModel" type="text" id="number" class="form-control" [(ngModel)]="searchVal" required>
+  <br><br>
+    <button class="btn btn-success" (click)="search()" [disabled]="searchVal === '' ">Search</button> &nbsp;
+    <button class="btn btn-primary" (click)="clearForm()">Clear Search</button> &nbsp;
+  </div>
+    <p>{{this.errMessage}}</p>
+    <br>
+
+    <div class="container"  *ngIf="this.listofSearched != null">
+      <div class="row">
+          <div class="row" *ngFor='let item of listofSearched'>
+              <app-personcard [item]='item'  (itemToDelete)="itemToDelete($event)"></app-personcard>
+      </div>
+    </div>
+    </div>
+</div>
+<hr>

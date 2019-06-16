@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-sm-2">
+      <h4>{{item.fullName}}</h4>
+    </div>
+    <div class="col-sm-2">
+        <h5>{{item.phoneNumber}}</h5>
+    </div>
+    <button class="btn-danger" (click)="DeleteItem(item)"> Delete Person </button> &nbsp;
+    <button class="btn-info" (click)="this.editmode = !this.editmode"> Edit Person </button>
+        <div class="row"  *ngIf="this.editmode">
+    <input placeholder="New Name" name="inputName" type="text" id="name" class="form-control" [(ngModel)]="editPerson.fullName" required>
+        <input  placeholder="New Number" name="inputNumber" #phoneNum="ngModel" type="text" id="number" class="form-control" [(ngModel)]="editPerson.phoneNumber" required minlength="9" maxlength="12">
+        <br/>
+        <button class="btn-primary" (click)="editInfo(item.id)"> Edit Person </button>
+        <p>{{this.errMessage}}</p>
+      </div>
+        <br/>
+  </div>
